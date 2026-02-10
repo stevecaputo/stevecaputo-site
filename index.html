@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steve Caputo | Marketing Executive</title>
+    <meta name="description" content="Marketing executive who builds brands at technology inflection points. Expert in rebrands, new market entries, and token launches to reach billion-dollar outcomes.">
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="Steve Caputo | Marketing Executive">
+    <meta property="og:description" content="Marketing executive who builds brands at technology inflection points. Expert in high-stakes market transitions—rebrands, new market entries, token launches.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://stevecaputo.com">
+    <meta property="og:image" content="https://stevecaputo.com/og-image.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Steve Caputo | Marketing Executive">
+    <meta name="twitter:description" content="Marketing executive who builds brands at technology inflection points.">
+    <meta name="twitter:image" content="https://stevecaputo.com/og-image.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --white: #ffffff;
+            --off-white: #f8f7f5;
+            --cream: #f3f1ed;
+            --black: #0a0a0a;
+            --text: #1a1a1a;
+            --gray: #5c5c5c;
+            --gray-light: #999999;
+            --border: #e0e0de;
+            --border-dark: #d0d0ce;
+            --sans: 'Inter', -apple-system, sans-serif;
+            --serif: 'Libre Baskerville', Georgia, serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--sans);
+            background: var(--white);
+            color: var(--text);
+            font-size: 16px;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::selection {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 20px 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 20px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--gray);
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--black);
+        }
+
+        .nav-cta {
+            padding: 10px 24px;
+            background: var(--black);
+            color: var(--white) !important;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+
+        .nav-cta:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 160px 48px 100px;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 80px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-photo {
+            width: 100%;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            filter: grayscale(100%);
+        }
+
+        .hero-label {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--gray);
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 4.5vw, 56px);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin-bottom: 32px;
+        }
+
+        .hero-narrative {
+            font-family: var(--serif);
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--gray);
+        }
+
+        .hero-narrative strong {
+            color: var(--text);
+        }
+
+        /* Ticker */
+        .ticker {
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            overflow: hidden;
+            background: var(--off-white);
+        }
+
+        .ticker-inner {
+            display: flex;
+            width: max-content;
+            animation: ticker 55s linear infinite;
+        }
+
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .ticker-item {
+            flex-shrink: 0;
+            width: 380px;
+            height: 240px;
+            position: relative;
+            border-right: 1px solid var(--border);
+            background: var(--white);
+        }
+
+        .ticker-item img,
+        .ticker-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .ticker-item figcaption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 16px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: var(--white);
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* Work Section */
+        .work-section {
+            padding: 100px 48px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 48px;
+            margin-bottom: 64px;
+            padding-bottom: 24px;
+            border-bottom: 2px solid var(--black);
+        }
+
+        .section-header h2 {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .section-header p {
+            font-family: var(--serif);
+            font-size: 20px;
+            line-height: 1.6;
+            color: var(--gray);
+            max-width: 600px;
+        }
+
+        .tagline-break {
+            display: block;
+        }
+
+        /* Work Grid */
+        .work-grid {
+            display: grid;
+            gap: 64px;
+        }
+
+        .work-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .work-item:nth-child(even) {
+            direction: rtl;
+        }
+
+        .work-item:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .work-image {
+            overflow: hidden;
+            background: var(--off-white);
+        }
+
+        .work-image.wide {
+            aspect-ratio: 16/9;
+        }
+
+        .work-image.tall {
+            aspect-ratio: 4/5;
+        }
+
+        .work-image.ultrawide {
+            aspect-ratio: 2/1;
+        }
+
+        .work-image img,
+        .work-image video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .work-item:hover .work-image img,
+        .work-item:hover .work-image video {
+            transform: scale(1.03);
+        }
+
+        .work-content {
+            padding: 24px 0;
+        }
+
+        .work-meta {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 16px;
+        }
+
+        .work-title {
+            font-size: clamp(24px, 2.5vw, 36px);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        .work-desc {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--gray);
+            margin-bottom: 24px;
+        }
+
+        .work-stats {
+            display: flex;
+            gap: 32px;
+        }
+
+        .work-stat-value {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .work-stat-label {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 100px 48px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .about-header {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 48px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--black);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .about-column h3 {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
+
+        .about-column h3:not(:first-child) {
+            margin-top: 32px;
+        }
+
+        .about-column p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: var(--gray);
+            margin-bottom: 16px;
+        }
+
+        /* CTA */
+        .cta-section {
+            padding: 140px 48px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .cta-label {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--gray);
+            margin-bottom: 24px;
+        }
+
+        .cta-title {
+            font-size: clamp(40px, 6vw, 72px);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.05;
+            margin-bottom: 24px;
+        }
+
+        .cta-subtitle {
+            font-family: var(--serif);
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--gray);
+            margin-bottom: 48px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+        }
+
+        .cta-buttons a {
+            padding: 16px 32px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            opacity: 0.85;
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--border);
+            color: var(--text);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--black);
+        }
+
+        /* Footer */
+        footer {
+            padding: 32px 48px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            color: var(--gray);
+            border-top: 1px solid var(--border);
+        }
+
+        footer a:hover {
+            color: var(--black);
+        }
+
+        /* Responsive - Tablet */
+        @media (max-width: 1200px) {
+            .about-grid {
+                grid-template-columns: 1.5fr 1fr 1fr;
+                gap: 32px;
+            }
+            .about-grid .about-column:nth-child(4),
+            .about-grid .about-column:nth-child(5) {
+                /* Press and Skills wrap to second row */
+            }
+        }
+
+        /* Responsive - Small Tablet / Large Phone */
+        @media (max-width: 1000px) {
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 48px;
+                padding-top: 120px;
+            }
+            .hero-photo {
+                max-width: 200px;
+                order: -1;
+            }
+            .work-item,
+            .work-item:nth-child(even) {
+                grid-template-columns: 1fr;
+                direction: ltr;
+            }
+            .work-image { order: -1; }
+            .section-header { grid-template-columns: 1fr; gap: 16px; }
+            .tagline-break { display: inline; }
+            .about-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+        }
+
+        /* Responsive - Phone */
+        @media (max-width: 600px) {
+            nav {
+                padding: 16px 20px;
+            }
+            .logo-img {
+                height: 16px;
+            }
+            .nav-links {
+                gap: 20px;
+            }
+            .nav-links a {
+                font-size: 13px;
+            }
+            .nav-cta { display: none; }
+            .hero, .work-section, .about-section, .cta-section {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            .hero {
+                padding-top: 100px;
+                padding-bottom: 60px;
+                gap: 32px;
+            }
+            .hero h1 {
+                font-size: 32px;
+                margin-bottom: 24px;
+            }
+            .hero-narrative {
+                font-size: 16px;
+            }
+            .hero-photo {
+                max-width: 160px;
+            }
+            .ticker-item {
+                width: 280px;
+                height: 180px;
+            }
+            .work-section {
+                padding-top: 60px;
+                padding-bottom: 60px;
+            }
+            .work-grid {
+                gap: 48px;
+            }
+            .work-title {
+                font-size: 22px;
+            }
+            .work-desc {
+                font-size: 14px;
+            }
+            .work-stat-value {
+                font-size: 24px;
+            }
+            .about-grid { grid-template-columns: 1fr; gap: 36px; }
+            .cta-section {
+                padding-top: 80px;
+                padding-bottom: 80px;
+            }
+            .cta-buttons {
+                flex-direction: column;
+            }
+            .cta-buttons a {
+                text-align: center;
+                width: 100%;
+            }
+            footer {
+                padding: 24px 20px;
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo"><img src="steve-caputo-logo.png" alt="Steve Caputo" class="logo-img"></a>
+        <div class="nav-links">
+            <a href="#work">Work</a>
+            <a href="#about">About</a>
+            <a href="https://linkedin.com/in/stevecaputo" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="#contact" class="nav-cta">Contact</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-label">Marketing Executive · New York, NY</div>
+            <h1>I build brands that break through and win.</h1>
+            <p class="hero-narrative">
+                <strong>Steve Caputo</strong> is an expert in navigating high-stakes market transitions—<strong>rebrands</strong>, <strong>new market entries</strong>, <strong>token launches</strong>—to reach billion-dollar outcomes. Most recently built the Magic Newton brand ecosystem from scratch to 1M+ followers &amp; 7M users as head of marketing at PayPal Ventures-backed Magic Labs, culminating in a token launch that listed on Coinbase, Binance and Upbit day one.
+            </p>
+        </div>
+        <img src="steve-photo.webp" alt="Steve Caputo" class="hero-photo">
+    </section>
+
+    <section class="ticker">
+        <div class="ticker-inner">
+            <figure class="ticker-item">
+                <video src="newton.mp4" autoplay loop muted playsinline></video>
+                <figcaption>Magic Newton</figcaption>
+            </figure>
+            <figure class="ticker-item">
+                <video src="converse.mp4" autoplay loop muted playsinline></video>
+                <figcaption>Converse</figcaption>
+            </figure>
+            <figure class="ticker-item">
+                <video src="sprite.mp4" autoplay loop muted playsinline></video>
+                <figcaption>Sprite × McDonald's</figcaption>
+            </figure>
+            <figure class="ticker-item">
+                <video src="instagram.mp4" autoplay loop muted playsinline></video>
+                <figcaption>Instagram</figcaption>
+            </figure>
+            <figure class="ticker-item">
+                <video src="nike.mp4" autoplay loop muted playsinline></video>
+                <figcaption>Nike</figcaption>
+            </figure>
+            <!-- Duplicate for seamless loop -->
+            <figure class="ticker-item">
+                <video src="newton.mp4" autoplay loop muted playsinline></video>
+                <figcaption>Magic Newton</figcaption>
+            </figure>
+            <figure class="ticker-item">
+                <video src="converse.mp4" autoplay loop muted playsinline></video>
+                <figcaption>Converse</figcaption>
+            </figure>
+            <figure class="ticker-item">
+                <video src="sprite.mp4" autoplay loop muted playsinline></video>
+                <figcaption>Sprite × McDonald's</figcaption>
+            </figure>
+            <figure class="ticker-item">
+                <video src="instagram.mp4" autoplay loop muted playsinline></video>
+                <figcaption>Instagram</figcaption>
+            </figure>
+            <figure class="ticker-item">
+                <video src="nike.mp4" autoplay loop muted playsinline></video>
+                <figcaption>Nike</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <section id="work" class="work-section">
+        <div class="section-header">
+            <h2>Selected Work</h2>
+            <p>Building brands at inflection points <span class="tagline-break">where attention + trust = value.</span></p>
+        </div>
+
+        <div class="work-grid">
+            <!-- 01: Magic Labs -->
+            <article class="work-item">
+                <div class="work-image wide">
+                    <video src="newton.mp4" autoplay loop muted playsinline></video>
+                </div>
+                <div class="work-content">
+                    <div class="work-meta">Head of Marketing · Magic Labs</div>
+                    <h3 class="work-title">Magic Newton: Building Trust in Onchain Finance</h3>
+                    <p class="work-desc">Built and led all marketing for Magic Labs from day one—company rebrand, product brand, foundation brand, founder positioning, and the "Secure the Future" institutional content franchise with Securitize, WisdomTree and Plume. Established Newton Protocol as a player in onchain risk management and compliance for stablecoins, RWAs and AI agents. That brand foundation enabled a token launch that listed on Coinbase, Binance and Upbit day one—recognized by Coinbase for industry-leading transparency standards.</p>
+                    <div class="work-stats">
+                        <div class="work-stat">
+                            <div class="work-stat-value">~$1B</div>
+                            <div class="work-stat-label">FDV at Launch</div>
+                        </div>
+                        <div class="work-stat">
+                            <div class="work-stat-value">7M</div>
+                            <div class="work-stat-label">Users</div>
+                        </div>
+                        <div class="work-stat">
+                            <div class="work-stat-value">1M+</div>
+                            <div class="work-stat-label">Followers</div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 02: Lower East Studios -->
+            <article class="work-item">
+                <div class="work-image tall">
+                    <video src="converse.mp4" autoplay loop muted playsinline preload="none"></video>
+                </div>
+                <div class="work-content">
+                    <div class="work-meta">Founder · Lower East Studios</div>
+                    <h3 class="work-title">Fractional CMO and Brand Consulting for Global Icons</h3>
+                    <p class="work-desc">Founded a consulting practice for brands at critical growth moments: The Madhive rebrand that contributed to a $300M raise and $1B valuation. The "Love, Chuck" brand strategy and campaign direction for Converse that activated a global creator network. Immersive launches for Amazon Prime Video at ComplexCon and around LA. Additional clients include Nike, Diageo and Uniqlo.</p>
+                    <div class="work-stats">
+                        <div class="work-stat">
+                            <div class="work-stat-value">$1B</div>
+                            <div class="work-stat-label">Client Valuation</div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 03: Sprite x McDonald's -->
+            <article class="work-item">
+                <div class="work-image wide">
+                    <video src="sprite.mp4" autoplay loop muted playsinline preload="none"></video>
+                </div>
+                <div class="work-content">
+                    <div class="work-meta">Executive Creative Director · Cornerstone / The Fader</div>
+                    <h3 class="work-title">Shaping Culture and Commerce at Scale</h3>
+                    <p class="work-desc">Created "That's the Mix"—a breakthrough partnership between Sprite, McDonald's and Spotify that generated 1B+ impressions in one week and became the creative blueprint for McDonald's collaborations with Travis Scott, BTS and Cardi B. Created the long-running "Our Soccer" brand platform for Major League Soccer that led to their $2.5B streaming deal. Led Sonos "Song Stories: Bowie" global product launch in partnership with the David Bowie estate.</p>
+                    <div class="work-stats">
+                        <div class="work-stat">
+                            <div class="work-stat-value">1B+</div>
+                            <div class="work-stat-label">Impressions</div>
+                        </div>
+                        <div class="work-stat">
+                            <div class="work-stat-value">$2.5B</div>
+                            <div class="work-stat-label">Streaming Deal</div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 04: Instagram -->
+            <article class="work-item">
+                <div class="work-image tall">
+                    <video src="instagram.mp4" autoplay loop muted playsinline preload="none"></video>
+                </div>
+                <div class="work-content">
+                    <div class="work-meta">Creative Director · Ogilvy</div>
+                    <h3 class="work-title">Instagram's First Brand Campaign</h3>
+                    <p class="work-desc">Co-created "Find More to Heart"—Instagram's first brand campaign, building a creator platform that discovered and championed emerging talent across the platform. Led innovative projects bringing AI into platform marketing in 2019.</p>
+                    <div class="work-stats">
+                        <div class="work-stat">
+                            <div class="work-stat-value">First</div>
+                            <div class="work-stat-label">Instagram Brand Campaign</div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 05: Nike / R/GA -->
+            <article class="work-item">
+                <div class="work-image ultrawide">
+                    <video src="nike.mp4" autoplay loop muted playsinline preload="none"></video>
+                </div>
+                <div class="work-content">
+                    <div class="work-meta">Creative Director · R/GA</div>
+                    <h3 class="work-title">Building the Agency of the Decade</h3>
+                    <p class="work-desc">One of R/GA's first CD/Writers during the Agency of the Decade era. Led global work for Air Force 1 "1THOLOGY"—selected by Virgil Abloh for the Nike x Off-White x MoMA collaboration. Created Nike's first YouTube channel, blog and podcast. Directed Nike Basketball campaigns featuring Kobe, LeBron and Rakim. Won Cannes, Clio, LIAA, One Show and Webby honors.</p>
+                    <div class="work-stats">
+                        <div class="work-stat">
+                            <div class="work-stat-value">10</div>
+                            <div class="work-stat-label">Agency of Year/Decade Awards</div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- About Me -->
+    <section id="about" class="about-section">
+        <div class="about-header">About Me</div>
+        <div class="about-grid">
+            <div class="about-column">
+                <h3>Approach</h3>
+                <p>I translate emerging technology for new audiences at scale—operating as a legitimacy bridge between innovation and trust.</p>
+                <p>Whether it's a high-stakes rebrand, a new market entry, or a token launch, I build the strategic and creative foundation that earns attention and credibility, then execute at the highest levels of craftsmanship.</p>
+            </div>
+            <div class="about-column">
+                <h3>Background</h3>
+                <p>Twenty years building brands at the intersection of culture and technology.</p>
+                <p>BA from the University of Pennsylvania. Studied abroad at King's College London.</p>
+            </div>
+            <div class="about-column">
+                <h3>Thought Leadership</h3>
+                <p>Event host and speaker at Korea Blockchain Week, Token2049 Singapore, SmartCon by Chainlink, ETHDenver and SXSW.</p>
+            </div>
+            <div class="about-column">
+                <h3>Press</h3>
+                <p>Blockworks · Coindesk · The Defiant · The New York Times · WIRED · Billboard · Fast Company · The Hollywood Reporter · Hypebeast · Vogue</p>
+            </div>
+            <div class="about-column">
+                <h3>Skills</h3>
+                <p>Brand Strategy &amp; Building · Go-to-Market · Token Launches &amp; Tokenomics · B2B &amp; B2C Product Marketing · Content &amp; Narrative Strategy · Community &amp; Cultural Strategy · Stablecoins, RWAs &amp; AI Agents · Global Campaign Execution · Experiential &amp; Events · Strategic Partnerships · Cross-Functional Leadership · P&amp;L Management · Board Reporting</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="cta-section">
+        <div class="cta-label">Get in Touch</div>
+        <h2 class="cta-title">Let's talk.</h2>
+        <p class="cta-subtitle">Seeking a CMO role at a high-growth company approaching a major inflection point.</p>
+        <div class="cta-buttons">
+            <a href="mailto:caputosteve@gmail.com" class="btn-primary">Email Me</a>
+            <a href="https://linkedin.com/in/stevecaputo" target="_blank" rel="noopener" class="btn-secondary">LinkedIn</a>
+        </div>
+    </section>
+
+    <footer>
+        <span>© 2026 Steve Caputo · New York City</span>
+        <a href="mailto:caputosteve@gmail.com">caputosteve@gmail.com</a>
+    </footer>
+
+    <script>
+        // Keep all ticker videos playing at all times
+        document.querySelectorAll('.ticker-item video').forEach(v => {
+            v.play().catch(() => {});
+            // Re-trigger play if browser pauses them
+            v.addEventListener('pause', () => {
+                if (!v.ended) v.play().catch(() => {});
+            });
+        });
+
+        // Lazy video playback - only play work section videos when visible
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const video = entry.target;
+                if (entry.isIntersecting) {
+                    if (video.preload === 'none') video.preload = 'auto';
+                    video.play().catch(() => {});
+                } else {
+                    video.pause();
+                }
+            });
+        }, { threshold: 0.25 });
+
+        document.querySelectorAll('.work-image video').forEach(v => observer.observe(v));
+    </script>
+
+</body>
+</html>
