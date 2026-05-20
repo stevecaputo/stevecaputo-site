@@ -129,17 +129,18 @@
         .hero {
             padding: 160px 48px 100px;
             display: grid;
-            grid-template-columns: 1fr 300px;
+            grid-template-columns: 1fr 1fr;
             gap: 80px;
-            align-items: center;
+            align-items: stretch;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .hero-photo {
             width: 100%;
-            aspect-ratio: 3/4;
+            aspect-ratio: 4/5;
             object-fit: cover;
+            object-position: center 25%;
             filter: grayscale(100%);
         }
 
